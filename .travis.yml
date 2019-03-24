@@ -14,8 +14,8 @@ jobs:
       jdk: oraclejdk8
       install: skip
       before_install:
-        - chmod +x /.gradlew
-      script: ./gradlew clean build
+        - chmod +x gradlew
+      script: gradle clean build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
