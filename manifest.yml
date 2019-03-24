@@ -1,0 +1,6 @@
+applications:
+  - name: pal-tracker
+    random-route : true
+    env:
+      WELCOME-MESSAGE : welcome
+    path : build/libs/pal-tracker.jar
