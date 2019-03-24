@@ -1,6 +1,7 @@
 package io.pivotal.pal.tracker;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class EnvController {
         this.cfInstanceIndex = cfInstanceIndex;
     }
 
+    @GetMapping("/env")
     public Map<String, String> getEnv() {
         env.put("PORT", port);
         env.put("MEMORY_LIMIT", memoryLimit);
