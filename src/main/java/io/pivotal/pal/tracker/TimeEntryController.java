@@ -11,9 +11,9 @@ import java.util.List;
 public class TimeEntryController {
 
 
-    TimeEntryRepository timeEntryRepository;
+    JdbcTimeEntryRepository timeEntryRepository;
 
-    public TimeEntryController(@Autowired TimeEntryRepository timeEntryRepository) {
+    public TimeEntryController(@Autowired JdbcTimeEntryRepository timeEntryRepository) {
         this.timeEntryRepository = timeEntryRepository;
     }
 
@@ -45,7 +45,7 @@ public class TimeEntryController {
     }
 
 
-    @PutMapping("/time-entries/{id}")
+    @PutMapping("/time-entries/{timeEntryId}")
     public ResponseEntity<TimeEntry> update(@PathVariable Long timeEntryId, @RequestBody TimeEntry timeEntry) {
 
             TimeEntry updated = timeEntryRepository.update(timeEntryId,timeEntry );
@@ -57,8 +57,8 @@ public class TimeEntryController {
 
     }
 
-    @DeleteMapping("/time-entries/{id}")
-    public ResponseEntity delete(@PathVariable long timeEntryId) {
+    @DeleteMapping("/time-entries/{timeEntryId}")
+    public ResponseEntity delete(@PathVariable Long timeEntryId) {
         timeEntryRepository.delete(timeEntryId);
         return  ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }

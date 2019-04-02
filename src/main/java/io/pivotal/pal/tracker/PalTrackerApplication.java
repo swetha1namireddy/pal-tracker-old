@@ -18,17 +18,6 @@ public class PalTrackerApplication {
     }
 
     @Bean
-    public TimeEntryRepository getRepository()
-    {
-        return new InMemoryTimeEntryRepository();
-    }
-
-    @Bean
-    TimeEntryRepository timeEntryRepository() {
-        return new InMemoryTimeEntryRepository();
-    }
-
-    @Bean
     public ObjectMapper jsonObjectMapper() {
 
         return Jackson2ObjectMapperBuilder.json()
@@ -37,5 +26,6 @@ public class PalTrackerApplication {
                 .modules(new JavaTimeModule())
                 .build();
     }
+
 
 }

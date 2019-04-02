@@ -20,8 +20,8 @@ public class EnvController {
 
     Map<String, String> env = new HashMap<String, String>();
 
-    public EnvController(@Value("${port}") String port,  @Value("${memory.limit}")
-            String memoryLimit, @Value("${cf.instance.index}") String cfInstanceIndex, @Value("${cf.instance.addr}") String cfInstanceAddr) {
+    public EnvController(@Value("${port:1234}") String port,  @Value("${memory.limit:1G}")
+            String memoryLimit, @Value("${cf.instance.index:1}") String cfInstanceIndex, @Value("${cf.instance.addr:12}") String cfInstanceAddr) {
         this.port =port;
         this.memoryLimit = memoryLimit;
         this.cfInstanceAddr = cfInstanceAddr;
